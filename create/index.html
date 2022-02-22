@@ -12,7 +12,20 @@
     </head>
     <body>
         <button id="logout">Logout</button>
-        <main></main>
-        <script type="module" src="./workshop.js"></script>
+        <main class="create-main">
+            <h2>Join a workshop!</h2>
+            <form class="person-form">
+                <label>
+                    Your name here!
+                    <input name="peoples-name" />
+                </label>
+                <label>
+                    What workshop do you want to join?
+                    <select name="workshop-id"></select>
+                </label>
+                <button>Submit</button>
+            </form>
+        </main>
+        <script type="module" src="./create.js"></script>
     </body>
 </html>
