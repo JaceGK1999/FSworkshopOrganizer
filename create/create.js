@@ -1,4 +1,4 @@
-import { checkAuth, createPerson, logout } from '../fetch-utils.js';
+import { checkAuth, createPerson, getWorkshops, logout } from '../fetch-utils.js';
 import { displayWorkshops } from '../workshop/workshop.js';
 
 checkAuth();
@@ -27,6 +27,22 @@ personForm.addEventListener('submit', async (e) => {
 
     personForm.reset();
 });
+
+window.addEventListener('load', async () => {
+    const select = document.querySelector('select');
+    const workshops = await getWorkshops();
+
+    for (let workshop of workshops) {
+        const option = document.createElement('option');
+
+        option.value = workshop.id;
+        option.textContent = workshop.name;
+
+        select.append(option);
+    }
+
+});
+
 
 window.addEventListener('load', async () => {
     displayWorkshops();
