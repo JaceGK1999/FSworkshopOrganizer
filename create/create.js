@@ -1,4 +1,5 @@
 import { checkAuth, logout } from '../fetch-utils.js';
+import { displayWorkshops } from '../workshop/workshop.js';
 
 checkAuth();
 
@@ -9,3 +10,7 @@ logoutButton.addEventListener('click', () => {
 });
 
 //------------------------------------------------------------------
+const personForm 
+// window.addEventListener('load', async () => {
+//     displayWorkshopshops();
+// });

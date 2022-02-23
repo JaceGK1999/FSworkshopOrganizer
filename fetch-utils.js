@@ -1,7 +1,6 @@
 const SUPABASE_URL = 'https://uhmsxsfarryniihsuyry.supabase.co';
 const SUPABASE_KEY =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVobXN4c2ZhcnJ5bmlpaHN1eXJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ4NTg5OTUsImV4cCI6MTk2MDQzNDk5NX0.DX8Yp3q-uUt4Q185uQlz61drW20MespMboRangENHIg';
-
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export function getUser() {
@@ -45,13 +44,15 @@ function checkError({ data, error }) {
 //---------------------------------------------------------------------------------------------------------------------
 
 export async function getWorkshops() {
-    const response = await client
-        .from('workshops')
-        .select('*, workshops (*)')
-        .match({ 'workshops.user_id': client.auth.session().user.id });
-
+    const response = await client.from('workshops').select(`*, peoples (*)`);
+    //.match({ 'peoples.user_id': client.auth.session().user.id });
+    console.log(response, 'response getWorkshops');
     return checkError(response);
 }
+
+// let { data: workshops, error } = await supabase
+//   .from('workshops')
+//   .select('*')
 
 export async function deletePerson(id) {
     const response = await client.from('peoples').delete().match({ id: id }).single();
