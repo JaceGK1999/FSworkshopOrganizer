@@ -11,7 +11,7 @@ logoutButton.addEventListener('click', () => {
 //------------------------------------------------------------------
 
 const workshopsEl = document.querySelector('.workshops-container');
-console.log('loading test 2');
+// console.log('loading test 2');
 export async function displayWorkshops() {
     workshopsEl.textContent = '';
 
@@ -49,6 +49,6 @@ export async function displayWorkshops() {
 }
 //displayWorkshops();
 window.addEventListener('load', async () => {
-    console.log('loading');
+    // console.log('loading');
     await displayWorkshops();
 });

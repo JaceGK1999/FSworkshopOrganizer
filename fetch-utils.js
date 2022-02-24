@@ -46,7 +46,7 @@ function checkError({ data, error }) {
 export async function getWorkshops() {
     const response = await client.from('workshops').select(`*, peoples (*)`);
     //.match({ 'peoples.user_id': client.auth.session().user.id });
-    console.log(response, 'response getWorkshops');
+    // console.log(response, 'response getWorkshops');
     return checkError(response);
 }
 
