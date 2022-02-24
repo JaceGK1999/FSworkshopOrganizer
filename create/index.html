@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/home.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <div class="gutter-right logo">
+                <a href="../workshop/">See all workshops.</a>
+                <a href="../create">Join a workshop.</a>
+            </div>
+        </header>
+        <button id="logout">Logout</button>
+        <main class="create-main">
+            <h2>Join a workshop!</h2>
+            <form class="person-form">
+                <label>
+                    Your name here!
+                    <input name="peoples-name" />
+                </label>
+                <label>
+                    What workshop do you want to join?
+                    <select name="workshop-id"></select>
+                </label>
+                <button>Submit</button>
+            </form>
+        </main>
+        <script type="module" src="./create.js"></script>
+    </body>
+</html>
