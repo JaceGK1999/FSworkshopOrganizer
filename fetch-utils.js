@@ -63,7 +63,7 @@ export async function deletePerson(id) {
 export async function createPerson(person) {
     const response = await client.from('peoples').insert({
         ...person,
-        user_id: client.auth.session().user.id,
+        //  user_id: client.auth.session().user.id,
     });
 
     return checkError(response);

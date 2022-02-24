@@ -1,5 +1,4 @@
 import { checkAuth, createPerson, getWorkshops, logout } from '../fetch-utils.js';
-import { displayWorkshops } from '../workshop/workshop.js';
 
 checkAuth();
 
@@ -22,8 +21,9 @@ personForm.addEventListener('submit', async (e) => {
 
     await createPerson({
         name: name,
-        workshop_id: workshopId,
+        workshops_id: workshopId,
     });
+    console.log(workshopId, 'id select');
 
     personForm.reset();
 });
@@ -40,10 +40,6 @@ window.addEventListener('load', async () => {
 
         select.append(option);
     }
-
 });
 
-
-window.addEventListener('load', async () => {
-    displayWorkshops();
-});
+checkAuth();

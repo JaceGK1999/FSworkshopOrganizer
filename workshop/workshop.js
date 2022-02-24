@@ -11,12 +11,12 @@ logoutButton.addEventListener('click', () => {
 //------------------------------------------------------------------
 
 const workshopsEl = document.querySelector('.workshops-container');
-
+console.log('loading test 2');
 export async function displayWorkshops() {
     workshopsEl.textContent = '';
 
     const workshops = await getWorkshops();
-    console.log(workshops, 'workshops test');
+    // console.log(workshops, 'workshops test');
     for (let workshop of workshops) {
         const workshopEl = document.createElement('div');
         const nameEl = document.createElement('h3');
@@ -47,7 +47,8 @@ export async function displayWorkshops() {
         workshopsEl.append(workshopEl);
     }
 }
-
+//displayWorkshops();
 window.addEventListener('load', async () => {
+    console.log('loading');
     await displayWorkshops();
 });
